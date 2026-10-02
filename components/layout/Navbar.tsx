@@ -3,8 +3,6 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { navLinks, site } from '@/content/site'
-import LogoArch from './LogoArch'
-import CookieDivider from '@/components/ui/CookieDivider'
 
 export default function Navbar() {
   const pathname = usePathname()
@@ -15,34 +13,45 @@ export default function Navbar() {
   }
 
   return (
-    <header className="bg-olive-deep text-blossom-200">
-      <div className="mx-auto max-w-5xl px-4 pt-10">
-        <Link href="/" aria-label={`${site.name}, home`} className="block">
-          <LogoArch className="mx-auto w-80 transition-opacity hover:opacity-85 sm:w-[34rem]" />
+    <header className="bg-blush">
+      {/* Content stays left so the hero hand can reach up into the right side */}
+      <nav
+        aria-label="Main"
+        className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-8 gap-y-3 px-5 py-5 sm:px-8"
+      >
+        <Link
+          href="/"
+          className="font-sandra text-lg font-semibold tracking-tight"
+          aria-label={`${site.name}, home`}
+        >
+          Sandra&rsquo;s
         </Link>
 
-        <CookieDivider className="-mt-2 mb-4" />
+        <ul className="flex items-center gap-6 sm:gap-8">
+          {navLinks.map((link) => (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                aria-current={isActive(link.href) ? 'page' : undefined}
+                className={
+                  isActive(link.href)
+                    ? 'text-sm font-medium underline decoration-2 underline-offset-8'
+                    : 'text-sm font-medium transition-opacity hover:opacity-70'
+                }
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
 
-        <nav aria-label="Main" className="border-t border-blossom-200/25">
-          <ul className="flex items-center justify-center gap-8 py-5 sm:gap-16">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  aria-current={isActive(link.href) ? 'page' : undefined}
-                  className={
-                    isActive(link.href)
-                        ? 'text-base font-medium tracking-wide text-white underline decoration-blossom-200 decoration-2 underline-offset-[8px]'
-                        : 'text-base font-medium tracking-wide text-blossom-100 transition-colors hover:text-white'
-}
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
+        <Link
+          href="/#order"
+          className="rounded-full bg-cocoa px-5 py-2.5 text-sm font-medium text-cream transition-colors hover:bg-cocoa-soft"
+        >
+          Order wholesale
+        </Link>
+      </nav>
     </header>
   )
 }
