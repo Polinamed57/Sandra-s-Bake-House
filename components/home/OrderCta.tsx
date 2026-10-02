@@ -13,7 +13,7 @@ const alternatives = [
 
 export default function OrderCta() {
   return (
-    <section id="order" className="scroll-mt-6 px-5 pb-20 sm:px-8">
+    <section id="order" className="scroll-mt-36 px-5 sm:scroll-mt-28 pb-20 sm:px-8">
       <div className="mx-auto max-w-3xl rounded-[2rem] bg-cream px-6 py-12 text-center sm:px-12">
         <h2 className="font-sandra text-4xl leading-tight sm:text-5xl">
           Ready to fill your display case?

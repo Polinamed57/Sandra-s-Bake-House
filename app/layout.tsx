@@ -54,6 +54,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${poppins.variable} ${bodoni.variable} ${bigShoulders.variable}`}
     >
       <body className="flex min-h-screen flex-col font-sans">

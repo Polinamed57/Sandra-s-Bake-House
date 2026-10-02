@@ -43,7 +43,8 @@ export default function Hero() {
         />
       </div>
 
-      {/* The forearm runs off the right edge of the page, so the cut-out edge never shows */}
+      {/* The forearm runs off the right edge of the page, so the cut-out edge never shows.
+          It starts inside the band because the sticky navbar would cover the fingertips. */}
       <Image
         src="/images/hero-hand.webp"
         alt="A hand holding three broken chocolate chip cookies"
@@ -51,7 +52,7 @@ export default function Hero() {
         height={1141}
         priority
         sizes="(max-width: 1024px) 70vw, 560px"
-        className="ml-auto block w-[70%] max-w-sm -mb-16 sm:max-w-md lg:absolute lg:-top-20 lg:right-0 lg:mb-0 lg:h-[calc(100%+9rem)] lg:w-auto lg:max-w-none"
+        className="ml-auto block w-[70%] max-w-sm -mb-16 sm:max-w-md lg:absolute lg:top-4 lg:right-0 lg:mb-0 lg:h-[calc(100%+3rem)] lg:w-auto lg:max-w-none"
       />
     </section>
   )

@@ -1,11 +1,25 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { navLinks, site } from '@/content/site'
 
+const SCROLL_THRESHOLD = 8
+
 export default function Navbar() {
   const pathname = usePathname()
+  const [scrolled, setScrolled] = useState<boolean>(false)
+
+  useEffect(() => {
+    function handleScroll(): void {
+      setScrolled(window.scrollY > SCROLL_THRESHOLD)
+    }
+    // Run once on mount: the page can load already scrolled (anchor links, reload)
+    handleScroll()
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   function isActive(href: string) {
     if (href === '/') return pathname === '/'
@@ -13,11 +27,16 @@ export default function Navbar() {
   }
 
   return (
-    <header className="bg-blush">
-      {/* Content stays left so the hero hand can reach up into the right side */}
+    <header
+      className={`sticky top-0 z-50 transition-[background-color,box-shadow] duration-300 ease-out ${
+        scrolled
+          ? 'bg-cream/85 shadow-[0_6px_24px_-12px_rgb(36_1_1/0.35)] backdrop-blur-md'
+          : 'bg-blush'
+      }`}
+    >
       <nav
         aria-label="Main"
-        className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-8 gap-y-3 px-5 py-5 sm:px-8"
+        className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-8 gap-y-3 px-5 py-3 sm:px-8 sm:py-5"
       >
         <Link
           href="/"

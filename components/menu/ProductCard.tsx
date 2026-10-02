@@ -21,7 +21,7 @@ export default function ProductCard({ product, index, total }: Props) {
     <section
       id={product.id}
       style={themeVars}
-      className="scroll-mt-4 bg-(--flavour-bg) text-(--flavour-text)"
+      className="scroll-mt-28 sm:scroll-mt-20 bg-(--flavour-bg) text-(--flavour-text)"
     >
       <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 sm:px-8 lg:grid-cols-2 lg:gap-16 lg:py-24">
         <div className={photosFirst ? '' : 'lg:order-2'}>
