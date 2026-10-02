@@ -31,6 +31,24 @@ export const navLinks: NavLink[] = [
   { label: 'Contact', href: '/contact' },
 ]
 
+export const perks = [
+  {
+    id: 'ready',
+    title: 'Ready to sell',
+    text: 'Every cookie arrives individually wrapped and labelled with full ingredients. Straight from the box to your counter.',
+  },
+  {
+    id: 'waste',
+    title: 'Less waste',
+    text: 'Delivered fresh-frozen. Thaw only what you need and keep the rest in the freezer for up to 2 months.',
+  },
+  {
+    id: 'local',
+    title: 'Proudly local',
+    text: 'Baked by hand in small batches in a licensed Edmonton kitchen. A local story your customers will love.',
+  },
+] as const
+
 export const wholesale = {
   minimum: '12 cookies per flavour, mix and match all five',
   leadTime: '5–7 days preferred (negotiable)',

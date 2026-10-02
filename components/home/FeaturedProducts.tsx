@@ -7,14 +7,11 @@ export default function FeaturedProducts() {
 
   return (
     <section className="mx-auto max-w-6xl px-5 pb-16 pt-24 sm:px-8 lg:pt-32">
-      <h2 className="font-sandra text-4xl sm:text-5xl">
+      <h2 className="text-center font-sandra text-4xl sm:text-5xl">
         {flavours.length} signature flavours
       </h2>
-      <p className="mt-3 text-cocoa/75">
-        Individually wrapped · Fresh-frozen · Made in Edmonton
-      </p>
 
-      <ul className="mt-10 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-5">
+      <ul className="mt-12 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-5">
         {flavours.map((flavour) => (
           <li key={flavour.id}>
             <Link href={`/menu#${flavour.id}`} className="group block text-center">
@@ -27,7 +24,7 @@ export default function FeaturedProducts() {
                   className="object-cover"
                 />
               </div>
-              <h3 className="mt-4 text-sm font-semibold leading-snug">
+              <h3 className="mx-auto mt-5 max-w-44 font-sandra text-xl font-semibold leading-tight">
                 {flavour.name}
               </h3>
             </Link>
