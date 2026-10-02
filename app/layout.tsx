@@ -1,28 +1,35 @@
 import type { Metadata } from 'next'
-import { Inter, Rouge_Script } from 'next/font/google'
+import { Big_Shoulders, Bodoni_Moda, Poppins } from 'next/font/google'
 import { site } from '@/content/site'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import './globals.css'
 
-const inter = Inter({
+const poppins = Poppins({
   subsets: ['latin'],
-  variable: '--font-inter',
+  weight: ['300', '400', '500', '600'],
+  variable: '--font-poppins',
   display: 'swap',
 })
 
-const script = Rouge_Script({
+// Free stand-ins for Sandra's Canva fonts: Bodoni Moda for Arsenica, Big Shoulders for Ardeco
+const bodoni = Bodoni_Moda({
   subsets: ['latin'],
-  weight: '400',
-  variable: '--font-script',
+  variable: '--font-bodoni',
+  display: 'swap',
+})
+
+const bigShoulders = Big_Shoulders({
+  subsets: ['latin'],
+  variable: '--font-big-shoulders',
   display: 'swap',
 })
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — ${site.tagline}`,
-    template: `%s — ${site.name}`,
+    default: `${site.name} · Wholesale cookies in Edmonton`,
+    template: `%s · ${site.name}`,
   },
   description: site.description,
   openGraph: {
@@ -30,7 +37,7 @@ export const metadata: Metadata = {
     description: site.description,
     url: site.url,
     siteName: site.name,
-    locale: 'en_US',
+    locale: 'en_CA',
     type: 'website',
   },
   icons: {
@@ -45,7 +52,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${script.variable}`}>
+    <html
+      lang="en"
+      className={`${poppins.variable} ${bodoni.variable} ${bigShoulders.variable}`}
+    >
       <body className="flex min-h-screen flex-col font-sans">
         <Navbar />
         <main id="main" className="flex-1">

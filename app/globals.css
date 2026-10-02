@@ -1,28 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #111111;
-  --color-forest: #005a22;
-  --color-teal: #19a08d;
-  --color-mint: #46b588;
-  --color-sage: #66845e;
+  --color-cocoa: #240101;
+  --color-cocoa-soft: #4a2420;
+  --color-blush: #f9ccce;
+  --color-blush-deep: #e3949d;
+  --color-cream: #fff7f5;
 
-  --color-olive: #787c1c;
-  --color-olive-deep: #5f6216;
-
-  --color-blossom: #ffe7ff;
-  --color-blossom-50: #fff5ff;
-  --color-blossom-100: #ffe7ff;
-  --color-blossom-200: #ffcdff;
-  --color-blossom-300: #ffb0ff;
-  --color-blossom-400: #f58ef5;
-  --color-blossom-500: #e26fe2;
-
-  --color-dough: #e8c9a0;
-  --color-cocoa: #4a2c18;
-
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-script), ui-serif, Georgia, serif;
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-sandra: var(--font-bodoni), ui-serif, Georgia, serif;
+  --font-bake: var(--font-big-shoulders), ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
@@ -31,32 +18,18 @@
   }
 
   body {
-    background-color: var(--color-blossom-50);
-    color: var(--color-ink);
+    background-color: var(--color-blush);
+    color: var(--color-cocoa);
     -webkit-font-smoothing: antialiased;
   }
 
-  h2,
-  h3,
-  h4 {
-    color: var(--color-forest);
-    font-weight: 500;
-  }
-
   ::selection {
-    background-color: var(--color-blossom);
-    color: var(--color-forest);
+    background-color: var(--color-cocoa);
+    color: var(--color-blush);
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-forest);
-    outline-offset: 2px;
+    outline: 2px solid var(--color-cocoa);
+    outline-offset: 3px;
   }
-}
-
-@utility display-title {
-  font-family: var(--font-display);
-  color: var(--color-forest);
-  line-height: 1.15;
-  font-weight: 400;
 }
