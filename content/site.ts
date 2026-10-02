@@ -49,10 +49,27 @@ export const perks = [
   },
 ] as const
 
+// Draft copy for Sandra to rewrite in her own words
+export const about = {
+  heading: 'Big cookies, small batches.',
+  intro:
+    "Sandra's Bake House makes big, soft, NYC-style cookies for Edmonton cafés and coffee shops.",
+  story: [
+    'Every batch is mixed, scooped and baked by hand in a licensed commercial kitchen that follows all food safety standards.',
+    'Each cookie weighs around 110–120 g, so it looks generous in your display case and feels like a real treat next to a latte.',
+    'Sandra keeps the line-up small on purpose: five flavours, each one tested until it was exactly right.',
+  ],
+  tip: {
+    title: 'Unwrap & warm me up',
+    text: 'A quick warm-up brings back that soft, fresh-from-the-oven feel. Your staff get simple handling and storage instructions with every order.',
+  },
+} as const
+
 export const wholesale = {
   minimum: '12 cookies per flavour, mix and match all five',
   leadTime: '5–7 days preferred (negotiable)',
   delivery: 'Edmonton area only, fee depends on location',
+  pickup: 'Available on request',
   packaging: 'Individually wrapped and labelled',
   shelfLife: '4 days on the counter, 2 months in the freezer',
   payment: 'Invoice or e-Transfer',

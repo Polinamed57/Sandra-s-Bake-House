@@ -37,6 +37,26 @@ export function InstagramIcon({ className = 'size-5' }: IconProps) {
   )
 }
 
+// Single-colour versions for social links, so they follow the text colour
+export function InstagramOutlineIcon({ className = 'size-6' }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+      <rect x="3" y="3" width="18" height="18" rx="5.5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none" />
+    </svg>
+  )
+}
+
+export function YouTubeIcon({ className = 'size-6' }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
+      <rect x="2" y="5" width="20" height="14" rx="4" fill="none" stroke="currentColor" strokeWidth="1.8" />
+      <path d="m10 9 5 3-5 3V9Z" fill="currentColor" />
+    </svg>
+  )
+}
+
 export function MailIcon({ className = 'size-5' }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
