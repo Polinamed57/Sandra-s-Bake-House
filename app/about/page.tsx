@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import { about, socials } from '@/content/site'
+import { socials } from '@/content/site'
+import { aboutBlocks, aboutFeaturePhoto, aboutHero, aboutTip } from '@/content/about'
 import { InstagramOutlineIcon, YouTubeIcon } from '@/components/ui/BrandIcons'
-import WholesaleTerms from '@/components/about/WholesaleTerms'
+import StoryBlock, { CutOutPhoto } from '@/components/about/StoryBlock'
 import OrderCta from '@/components/home/OrderCta'
 
 export const metadata: Metadata = {
@@ -14,45 +15,56 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="bg-cocoa text-cream">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 sm:px-8 lg:grid-cols-2 lg:gap-16 lg:py-24">
-          <div>
+      <section className="relative overflow-hidden bg-cocoa text-cream">
+        <div className="relative z-10 mx-auto max-w-6xl px-5 py-16 sm:px-8 lg:py-28">
+          <div className="max-w-xl">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blush">
               About us
             </p>
-            <h1 className="mt-4 font-sandra text-5xl leading-tight sm:text-6xl">
-              {about.heading}
+            <h1 className="mt-4 text-balance font-sandra text-5xl leading-tight sm:text-6xl">
+              {aboutHero.heading}
             </h1>
             <p className="mt-6 text-lg font-light leading-relaxed text-cream/90">
-              {about.intro}
+              {aboutHero.intro}
             </p>
           </div>
-          <div className="relative aspect-[3/2] overflow-hidden rounded-[2rem]">
-            <Image
-              src="/images/lineup.jpg"
-              alt="All five flavours individually wrapped on a pink background"
-              fill
-              priority
-              sizes="(max-width: 1024px) 90vw, 540px"
-              className="object-cover"
-            />
-          </div>
+        </div>
+        <div className="relative h-72 lg:absolute lg:inset-y-0 lg:right-0 lg:h-auto lg:w-1/2">
+          {aboutHero.photos.map((photo) => (
+            <CutOutPhoto key={photo.src} photo={photo} />
+          ))}
         </div>
       </section>
 
-      <section className="mx-auto max-w-3xl px-5 pt-20 sm:px-8">
-        <div className="space-y-5 text-lg leading-relaxed">
-          {about.story.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
-        </div>
+      <div className="space-y-4 pt-8 lg:space-y-0 lg:pt-0">
+        {aboutBlocks.map((block) => (
+          <StoryBlock key={block.id} block={block} />
+        ))}
+      </div>
 
-        <aside className="mt-10 rounded-3xl border-2 border-dashed border-cocoa/40 px-7 py-6">
-          <p className="font-sandra text-2xl">{about.tip.title}</p>
-          <p className="mt-2 leading-relaxed text-cocoa/80">{about.tip.text}</p>
+      {/* Full-bleed and cropped top and bottom, so it reads as a banner rather than a framed photo */}
+      <figure className="pt-8 lg:pt-12">
+        <div className="relative aspect-[4/3] w-full sm:aspect-[2/1]">
+          <Image
+            src={aboutFeaturePhoto.src}
+            alt={aboutFeaturePhoto.alt}
+            fill
+            sizes="100vw"
+            className="object-cover object-[50%_51%]"
+          />
+        </div>
+        <figcaption className="mt-14 text-center font-sandra text-2xl">
+          {aboutFeaturePhoto.caption}
+        </figcaption>
+      </figure>
+
+      <section className="mx-auto max-w-3xl px-5 pb-24 pt-5 sm:px-8">
+        <aside className="rounded-3xl border-2 border-dashed border-cocoa/40 px-7 py-6">
+          <p className="font-sandra text-2xl">{aboutTip.title}</p>
+          <p className="mt-2 leading-relaxed text-cocoa/80">{aboutTip.text}</p>
         </aside>
 
-        <ul className="mt-10 flex justify-center gap-4">
+        <ul className="mt-16 flex justify-center gap-4">
           {socials.map((social) => {
             const Icon = social.label === 'YouTube' ? YouTubeIcon : InstagramOutlineIcon
             return (
@@ -72,7 +84,6 @@ export default function AboutPage() {
         </ul>
       </section>
 
-      <WholesaleTerms />
       <OrderCta />
     </>
   )
