@@ -42,9 +42,9 @@ export default function AboutPage() {
         ))}
       </div>
 
-      {/* Full-bleed and cropped top and bottom, so it reads as a banner rather than a framed photo */}
+      {/* Full-bleed and cropped short, so it reads as a banner rather than a framed photo */}
       <figure className="pt-8 lg:pt-12">
-        <div className="relative aspect-[4/3] w-full sm:aspect-[2/1]">
+        <div className="relative aspect-[4/3] w-full sm:aspect-[5/2] lg:aspect-[3/1]">
           <Image
             src={aboutFeaturePhoto.src}
             alt={aboutFeaturePhoto.alt}

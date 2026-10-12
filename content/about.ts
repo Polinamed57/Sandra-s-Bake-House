@@ -132,9 +132,9 @@ export const aboutBlocks: AboutBlock[] = [
 ]
 
 export const aboutFeaturePhoto = {
-  src: '/images/about/box-heart.jpg',
-  width: 1800,
-  height: 1200,
+  src: '/images/about/box-heart.webp',
+  width: 3200,
+  height: 2133,
   alt: 'Nine individually wrapped cookies on a pink table, with the shadow of two hands making a heart',
   caption: 'Every order, packed by hand.',
 }
