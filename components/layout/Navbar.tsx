@@ -64,12 +64,13 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <Link
-          href="/#order"
+        {/* Every page ends with the order block, so this scrolls on the current page instead of jumping home */}
+        <a
+          href="#order"
           className="rounded-full bg-cocoa px-5 py-2.5 text-sm font-medium text-cream transition-colors hover:bg-cocoa-soft"
         >
           Order wholesale
-        </Link>
+        </a>
       </nav>
     </header>
   )
