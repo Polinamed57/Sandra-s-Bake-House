@@ -40,10 +40,6 @@ export const metadata: Metadata = {
     locale: 'en_CA',
     type: 'website',
   },
-  icons: {
-    icon: '/favicon.svg',
-    apple: '/apple-touch-icon.png',
-  },
 }
 
 export default function RootLayout({
