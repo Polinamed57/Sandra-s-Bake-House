@@ -26,13 +26,13 @@ export default function Footer() {
           <p className="mt-3 text-sm text-cream/70">{site.city}</p>
         </div>
 
-        <ul className="flex flex-col gap-3 text-sm sm:items-end">
+        <ul className="flex flex-col gap-1 text-sm sm:items-end">
           {links.map(({ label, href, Icon, external }) => (
             <li key={label}>
               <a
                 href={href}
                 {...(external && { target: '_blank', rel: 'noopener noreferrer' })}
-                className="inline-flex items-center gap-2.5 hover:underline"
+                className="inline-flex items-center gap-2.5 py-2.5 hover:underline"
               >
                 {label}
                 <Icon className="size-5" />

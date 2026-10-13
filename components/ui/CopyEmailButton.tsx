@@ -24,7 +24,7 @@ export default function CopyEmailButton({ email }: Props) {
     <button
       type="button"
       onClick={handleCopy}
-      className="rounded-full border border-cocoa/30 px-4 py-1.5 text-sm font-medium transition-colors hover:bg-cocoa hover:text-cream"
+      className="rounded-full border border-cocoa/30 px-5 py-3 text-sm font-medium transition-colors hover:bg-cocoa hover:text-cream"
     >
       <span aria-live="polite">{copied ? 'Copied!' : 'Copy email'}</span>
     </button>

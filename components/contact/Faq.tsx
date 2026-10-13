@@ -6,8 +6,8 @@ export default function Faq() {
       <h2 className="text-center font-sandra text-4xl sm:text-5xl">Good to know</h2>
       <div className="mt-10 divide-y divide-cocoa/15 border-y border-cocoa/15">
         {faq.map((item) => (
-          <details key={item.question} className="group py-5">
-            <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-lg font-medium">
+          <details key={item.question} className="group py-3">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-2 text-lg font-medium">
               {item.question}
               <span
                 aria-hidden="true"

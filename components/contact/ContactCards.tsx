@@ -68,7 +68,7 @@ export default function ContactCards() {
           <a
             href={card.href}
             {...(card.external && { target: '_blank', rel: 'noopener noreferrer' })}
-            className="mt-6 self-start font-semibold underline decoration-2 underline-offset-4 hover:opacity-70"
+            className="mt-4 self-start py-2 font-semibold underline decoration-2 underline-offset-4 hover:opacity-70"
           >
             {card.action}
           </a>

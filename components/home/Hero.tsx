@@ -11,7 +11,7 @@ export default function Hero() {
         <h1 className="leading-none">
           <span className="block font-sandra text-7xl sm:text-8xl lg:text-[8.5rem]">
             Sandra&rsquo;s
-          </span>
+          </span>{' '}
           <span className="mt-1 block font-bake text-6xl font-medium sm:text-7xl lg:text-[6.25rem]">
             Bake House
           </span>
